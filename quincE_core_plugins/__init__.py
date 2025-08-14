@@ -1,4 +1,4 @@
-from QuincE import PluginCategory
+from quincE import PluginCategory
 
 from . import flow_control
 

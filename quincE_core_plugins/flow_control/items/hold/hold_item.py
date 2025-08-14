@@ -1,7 +1,7 @@
 import typing
 from typing import Mapping, Self
 
-from QuincE import Json, Process, WidgetDataItem
+from quincE import Json, Process, WidgetDataItem
 
 from .hold_widget import HoldWidget
 

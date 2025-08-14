@@ -1,17 +1,23 @@
 [project]
-name = "Quinc-E-builtin-plugins"
-version = "0.1.0"
+name = "quinc-E-core-plugins"
+dynamic = ["version"]
 description = "Built-in plugins for Quinc-E."
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = []
 
-[project.entry-points."QuincE.plugins"]
-builtin = "builtin_plugins"
+[project.entry-points."quincE.plugins"]
+quinc-E-core-plugins = "quincE_core_plugins"
 
 [build-system]
-requires = ["hatchling"]
+requires = ["hatchling", "hatch-vcs"]
 build-backend = "hatchling.build"
 
 [tool.hatch.build]
-packages = ["./builtin_plugins"]
+packages = ["./quincE_core_plugins"]
+
+[tool.hatch.version]
+source = "vcs"
+
+[tool.hatch.version.raw-options]
+version_scheme = "no-guess-dev"

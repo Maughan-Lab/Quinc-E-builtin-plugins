@@ -12,4 +12,4 @@ Hold for a specified duration.
 Repeat the nested steps a specified number of times. Data for the nested steps is placed in a `Loop` directory.
 
 #### `Simultaneous`
-Run the nested items "simultaneously". In reality, this rapidly switches between the nested steps; when one pauses, another resumes.
+Run the nested steps "simultaneously". In reality, this rapidly switches between the nested steps; when one pauses, another resumes.
