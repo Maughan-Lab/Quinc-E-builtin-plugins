@@ -1,7 +1,7 @@
 import typing
-from typing import Mapping, Self
+from typing import Iterable, Mapping, Self
 
-from quincE import Json, Process, WidgetDataItem
+from quincE import Json, SequenceStep, WidgetDataItem
 
 from .hold_widget import HoldWidget
 
@@ -36,5 +36,6 @@ class HoldItem(WidgetDataItem):
     def widget(self) -> HoldWidget:  # implementation
         return self.hold_widget
 
-    def create_process(self) -> Process:  # implementation
+    # implementation
+    def create_sequence_step(self, substeps: Iterable[SequenceStep]) -> SequenceStep:
         raise NotImplementedError("AHHHH")
