@@ -8,6 +8,7 @@ from quincE.custom_widgets import SpinBox
 from quincE.utility import layout as layout_util
 
 BASE_DISPLAY_NAME = "Hold"
+ICON = QIcon(str(Path(__file__).parent.joinpath("clock-select.png")))
 HOURS_LABEL = "Hours"
 MINUTES_LABEL = "Minutes"
 SECONDS_LABEL = "Seconds"
@@ -18,12 +19,11 @@ class HoldWidget(ItemWidget):
 
     def __init__(self, hours: int, minutes: int, seconds: int):
         layout = QFormLayout()
-
         ItemWidget.__init__(
             self,
             layout,
             BASE_DISPLAY_NAME,
-            QIcon(str(Path(__file__).parent.joinpath("clock-select.png"))),
+            ICON,
             TextDescription(
                 "Hold",
                 "Hold for the provided duration.",
@@ -40,18 +40,15 @@ class HoldWidget(ItemWidget):
         self.seconds_spinbox = SpinBox(initial_value=seconds)
         layout_util.add_to_form_layout(
             layout,
-            ("Hours", self.hours_spinbox),
-            ("Minutes", self.minutes_spinbox),
-            ("Seconds", self.seconds_spinbox),
+            (HOURS_LABEL, self.hours_spinbox),
+            (MINUTES_LABEL, self.minutes_spinbox),
+            (SECONDS_LABEL, self.seconds_spinbox),
         )
 
         for spinbox in [self.hours_spinbox, self.minutes_spinbox, self.seconds_spinbox]:
             spinbox.editingFinished.connect(self.handle_value_change)
 
-        if (hours, minutes, seconds) != (0, 0, 0):
-            self.handle_value_change()  # start with the correct title
-
-    def handle_value_change(self):
+    def handle_value_change(self):  # used externally
         """Handle any of the duration spinboxes changing."""
         self.setWindowTitle(
             f"{BASE_DISPLAY_NAME} ({self.hours_spinbox.text()} hours, "

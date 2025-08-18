@@ -1,8 +1,8 @@
 from quincE import PluginCategory
 
-from .items import HoldItem
+from .items import HoldItem, LoopItem
 
 
 def categories() -> list[PluginCategory]:
     """Get the categories for this plugin."""
-    return [PluginCategory("Flow Control", [HoldItem(0, 0, 0)])]
+    return [PluginCategory("Flow Control", [HoldItem(0, 0, 0), LoopItem(2)])]

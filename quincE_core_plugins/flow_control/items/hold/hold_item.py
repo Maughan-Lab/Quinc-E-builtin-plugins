@@ -1,8 +1,9 @@
 import typing
-from typing import Iterable, Mapping, Self
+from typing import Mapping, Self
 
 from quincE import Json, SequenceStep, WidgetDataItem
 
+from .hold_step import HoldStep
 from .hold_widget import HoldWidget
 
 HOURS = "hours"
@@ -37,5 +38,9 @@ class HoldItem(WidgetDataItem):
         return self.hold_widget
 
     # implementation
-    def create_sequence_step(self, substeps: Iterable[SequenceStep]) -> SequenceStep:
-        raise NotImplementedError("AHHHH")
+    def create_sequence_step(self, _) -> SequenceStep:
+        return HoldStep(
+            self.hold_widget.hours_spinbox.value(),
+            self.hold_widget.minutes_spinbox.value(),
+            self.hold_widget.seconds_spinbox.value(),
+        )
