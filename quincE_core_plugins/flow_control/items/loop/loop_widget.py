@@ -23,8 +23,12 @@ class LoopWidget(ItemWidget):
             ICON,
             TextDescription(
                 BASE_DISPLAY_NAME,
-                "Repeat the nested items a specified number of times.",
-                {LOOP_COUNT_LABEL: "The number of times to repeat the nested items."},
+                "Repeat the nested steps a specified number of times.",
+                {LOOP_COUNT_LABEL: "The number of times to repeat the nested steps."},
+                {
+                    "[X]": "Where **[X]** is a numbered directory for "
+                    "each loop that contains data for the nested steps."
+                },
             ),
         )
 
