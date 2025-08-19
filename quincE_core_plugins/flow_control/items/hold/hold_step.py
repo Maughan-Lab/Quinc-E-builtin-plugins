@@ -23,9 +23,6 @@ class HoldStep(SequenceStep):
     def name(self) -> str:  # implementation
         return BASE_DISPLAY_NAME
 
-    def directory_name(self) -> str:  # implementation
-        return BASE_DISPLAY_NAME
-
     def metadata(self) -> dict[str, Any]:  # overridden
         return {
             "Selected Hours": self.hours,

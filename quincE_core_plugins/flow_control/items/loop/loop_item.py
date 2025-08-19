@@ -12,7 +12,7 @@ NUMBER_OF_LOOPS = "number_of_loops"
 class LoopItem(WidgetDataItem):
     """Repeat the nested steps a specified number of times; item."""
 
-    def __init__(self, number_of_loops: int):
+    def __init__(self, number_of_loops: int = 2):
         self.loop_widget = LoopWidget(number_of_loops)
 
     @classmethod

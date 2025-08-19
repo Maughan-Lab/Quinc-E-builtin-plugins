@@ -14,7 +14,7 @@ SECONDS = "seconds"
 class HoldItem(WidgetDataItem):
     """Hold for a duration; item."""
 
-    def __init__(self, hours: int, minutes: int, seconds: int):
+    def __init__(self, hours: int = 0, minutes: int = 0, seconds: int = 0):
         self.hold_widget = HoldWidget(hours, minutes, seconds)
 
     @classmethod
