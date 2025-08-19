@@ -1,4 +1,4 @@
-Built-in plugins for [Quinc-E](https://github.com/Maughan-Lab/Quincy-E.git).
+Built-in plugins for [Fabrial](https://github.com/Maughan-Lab/fabrial.git).
 
 ## Categories
 

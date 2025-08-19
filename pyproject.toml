@@ -1,20 +1,20 @@
 [project]
-name = "quinc-E-core-plugins"
+name = "fabrial-core-plugins"
 dynamic = ["version"]
-description = "Built-in plugins for Quinc-E."
+description = "Built-in plugins for Fabrial."
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = []
 
-[project.entry-points."quincE.plugins"]
-quinc-E-core-plugins = "quincE_core_plugins"
+[project.urls]
+Repository = "https://github.com/Maughan-Lab/fabrial-core-plugins"
+
+[project.entry-points."fabrial.plugins"]
+fabrial-core-plugins = "fabrial_core_plugins"
 
 [build-system]
 requires = ["hatchling", "hatch-vcs"]
 build-backend = "hatchling.build"
-
-[tool.hatch.build]
-packages = ["./quincE_core_plugins"]
 
 [tool.hatch.version]
 source = "vcs"
