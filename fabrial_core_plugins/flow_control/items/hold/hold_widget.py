@@ -36,8 +36,8 @@ class HoldWidget(ItemWidget):
         )
 
         self.hours_spinbox = SpinBox(initial_value=hours)
-        self.minutes_spinbox = SpinBox(initial_value=minutes)
-        self.seconds_spinbox = SpinBox(initial_value=seconds)
+        self.minutes_spinbox = SpinBox(initial_value=minutes, maximum=59)
+        self.seconds_spinbox = SpinBox(initial_value=seconds, maximum=59)
         layout_util.add_to_form_layout(
             layout,
             (HOURS_LABEL, self.hours_spinbox),
