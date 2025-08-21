@@ -4,7 +4,7 @@ dynamic = ["version"]
 description = "Built-in plugins for Fabrial."
 readme = "README.md"
 requires-python = ">=3.13"
-dependencies = []
+dependencies = ["fabrial"]
 
 [project.urls]
 Repository = "https://github.com/Maughan-Lab/fabrial-core-plugins"
@@ -21,3 +21,8 @@ source = "vcs"
 
 [tool.hatch.version.raw-options]
 version_scheme = "no-guess-dev"
+
+
+# uv config
+[tool.uv.sources]
+fabrial = { workspace = true }

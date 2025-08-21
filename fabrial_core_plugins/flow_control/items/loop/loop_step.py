@@ -17,6 +17,7 @@ class LoopStep(SequenceStep):
         # number of loops is guaranteed to be at least 2
         for i in range(1, self.number_of_loops):
             await self.run_one_loop(runner, data_directory, i)
+            await self.sleep(0)  # give the sequence time to do other things
             self.reset()  # reset after each loop
         # except the last loop
         await self.run_one_loop(runner, data_directory, i + 1)

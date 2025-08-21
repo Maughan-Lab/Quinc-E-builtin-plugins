@@ -4,7 +4,7 @@ from PyQt6.QtGui import QIcon
 from PyQt6.QtWidgets import QFormLayout
 
 from fabrial import ItemWidget, TextDescription
-from fabrial.custom_widgets import SpinBox
+from fabrial.custom_widgets import SpinBox, Widget
 from fabrial.utility import layout as layout_util
 
 BASE_DISPLAY_NAME = "Hold"
@@ -19,9 +19,11 @@ class HoldWidget(ItemWidget):
 
     def __init__(self, hours: int, minutes: int, seconds: int):
         layout = QFormLayout()
+        parameter_widget = Widget(layout)
+
         ItemWidget.__init__(
             self,
-            layout,
+            parameter_widget,
             BASE_DISPLAY_NAME,
             ICON,
             TextDescription(

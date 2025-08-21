@@ -4,7 +4,7 @@ from PyQt6.QtGui import QIcon
 from PyQt6.QtWidgets import QFormLayout
 
 from fabrial import ItemWidget, TextDescription
-from fabrial.custom_widgets import SpinBox
+from fabrial.custom_widgets import SpinBox, Widget
 
 BASE_DISPLAY_NAME = "Loop"
 ICON = QIcon(str(Path(__file__).parent.joinpath("arrow-repeat.png")))
@@ -16,9 +16,11 @@ class LoopWidget(ItemWidget):
 
     def __init__(self, number_of_loops: int):
         layout = QFormLayout()
+        parameter_widget = Widget(layout)
+
         ItemWidget.__init__(
             self,
-            layout,
+            parameter_widget,
             BASE_DISPLAY_NAME,
             ICON,
             TextDescription(
