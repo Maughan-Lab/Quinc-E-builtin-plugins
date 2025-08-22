@@ -1,4 +1,4 @@
-Built-in plugins for [Fabrial](https://github.com/Maughan-Lab/fabrial.git).
+Built-in plugins for [Fabrial](https://pypi.org/project/fabrial/).
 
 ## Categories
 
