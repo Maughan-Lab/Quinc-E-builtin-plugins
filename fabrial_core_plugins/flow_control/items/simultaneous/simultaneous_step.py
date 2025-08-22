@@ -1,6 +1,6 @@
 from asyncio import TaskGroup
+from collections.abc import Iterable
 from pathlib import Path
-from typing import Iterable
 
 from fabrial import SequenceStep, StepRunner
 
